@@ -1,3 +1,9 @@
+# Propios de este proyecto
+*.csv
+*.xlsx
+*.pdf
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

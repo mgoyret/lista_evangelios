@@ -5,10 +5,7 @@ from time import sleep
 from csv import writer
 from itertools import zip_longest
 
-anio = 2022
-
-
-def load_mes(dias, mes):
+def load_mes(dias, mes, anio):
     lista_mes = []
     for dia in range(1, dias+1):
         res = requests.get(
@@ -30,18 +27,18 @@ def load_mes(dias, mes):
 
 
 dias = [''] + [num for num in range(1, 31+1)]
-enero = ['ENERO'] + load_mes(31, 1)
-febrero = ['FEBRERO'] + load_mes(28, 2)  # chequear dias segun el anio
-marzo = ['MARZO'] + load_mes(31, 3)
-abril = ['ABRIL'] + load_mes(30, 4)
-mayo=['MAYO'] + load_mes(31, 5)
-junio=['JUNIO'] + load_mes(30, 6)
-julio=['JULIO'] + load_mes(31, 7)
-agosto=['AGOSTO'] + load_mes(31, 8)
-septiembre=['SEPTIEMBRE'] + load_mes(30, 9)
-octubre=['OCTUBRE'] + load_mes(31, 10)
-noviembre=['NOVIEMBRE'] + load_mes(30, 11)
-diciembre=['DICIEMBRE'] + load_mes(31, 12)
+enero = ['ENERO'] + load_mes(31, 1, 2022)
+febrero = ['FEBRERO'] + load_mes(28, 2, 2022)  # chequear dias segun el anio
+marzo = ['MARZO'] + load_mes(31, 3, 2022)
+abril = ['ABRIL'] + load_mes(30, 4, 2022)
+mayo=['MAYO'] + load_mes(31, 5, 2022)
+junio=['JUNIO'] + load_mes(30, 6, 2022)
+julio=['JULIO'] + load_mes(31, 7, 2022)
+agosto=['AGOSTO'] + load_mes(31, 8, 2022)
+septiembre=['SEPTIEMBRE'] + load_mes(30, 9, 2022)
+octubre=['OCTUBRE'] + load_mes(31, 10, 2022)
+noviembre=['NOVIEMBRE'] + load_mes(30, 11, 2022)
+diciembre=['DICIEMBRE'] + load_mes(31, 12, 2022)
 
 ziped=zip_longest(dias, enero, febrero, marzo, abril, mayo, junio, julio,
                   agosto, septiembre, octubre, noviembre, diciembre, fillvalue='')
